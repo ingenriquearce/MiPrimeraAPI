@@ -46,7 +46,7 @@ public class WeatherForecastController : ControllerBase
         return Ok();
     }
 
-    [HttpDelete(Name = "DeleteWeatherForecast")]
+    [HttpDelete("{index}", Name = "DeleteWeatherForecast")]
     public IActionResult Delete(int index)
     {
         ListWeatherForecast.RemoveAt(index);
