@@ -45,7 +45,7 @@ public class WeatherForecastController : ControllerBase
     [HttpPost(Name = "PostWeatherForecast")]
     [Route("PostWeatherForecast")]
     [Route("PostWeatherForecast2")]
-    [Route("[action]")]
+    [Route("[action]")] //This route is dynamic because it point to the action (specific method)
     public IActionResult Post(WeatherForecast weatherForecast)
     {
         ListWeatherForecast.Add(weatherForecast);
