@@ -20,7 +20,9 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.UseWelcomePage(); //it don´t appearme
+//app.UseWelcomePage(); //it appears me because I set up port https before continuing
+
+app.UseTimeMiddleware();
 
 app.MapControllers();
 
