@@ -12,7 +12,7 @@ public class WeatherForecastController : ControllerBase
     };
 
     private readonly ILogger<WeatherForecastController> _logger;
-
+    
     private static List<WeatherForecast> ListWeatherForecast = new List<WeatherForecast>();
 
     //This is the constructor method
