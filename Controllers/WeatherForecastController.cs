@@ -33,9 +33,9 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
-    [Route("GetWeatherForecast")]
-    [Route("GetWeatherForecast2")]
-    [Route("[action]")]
+    //[Route("GetWeatherForecast")]
+    //[Route("GetWeatherForecast2")]
+    //[Route("[action]")]
     public IEnumerable<WeatherForecast> Get()
     {
         _logger.LogInformation("La lista esta retornando los weathers");
@@ -44,9 +44,9 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpPost(Name = "PostWeatherForecast")]
-    [Route("PostWeatherForecast")]
+    /*[Route("PostWeatherForecast")]
     [Route("PostWeatherForecast2")]
-    [Route("[action]")] //This route is dynamic because it point to the action (specific method)
+    [Route("[action]")]*/ //This route is dynamic because it point to the action (specific method)
     public IActionResult Post(WeatherForecast weatherForecast)
     {
         ListWeatherForecast.Add(weatherForecast);
@@ -54,9 +54,9 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpDelete("{index}", Name = "DeleteWeatherForecast")]
-    [Route("DeleteWeatherForecast")]
+    /*[Route("DeleteWeatherForecast")]
     [Route("DeleteWeatherForecast2")]
-    [Route("[action]")]
+    [Route("[action]")]*/
     public IActionResult Delete(int index)
     {
         ListWeatherForecast.RemoveAt(index);

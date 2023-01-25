@@ -17,6 +17,7 @@ public class HelloWorldController : ControllerBase
     //Aqui tengo el pendiente de probar este controlador en postman y luego recien hacer el logging que estoy creando
     //private static readonly ILogger<HelloWorldController> _logger;
 
+    [HttpGet]
     public IActionResult Get()
     {
         //_logger.LogInformation("El hello world se esta ejecutando...");
