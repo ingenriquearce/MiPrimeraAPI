@@ -11,7 +11,7 @@ builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 
 //Two ways to implement HelloWorld service:
 //builder.Services.AddScoped<IHelloWorldService, HelloWorldService>(); This way is more simplified
-//builder.Services.AddScoped<IHelloWorldService>(p=> new HelloWorldService()); //This way can be used when we have to add a parameter
+builder.Services.AddScoped<IHelloWorldService>(p=> new HelloWorldService()); //This way can be used when we have to add a parameter
 //Here, it is created the object "HelloWorldService" so that controller can use it
 
 
