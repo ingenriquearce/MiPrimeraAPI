@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using webapi;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//Here, we set up context of database, then here there is an example with database in memory
+builder.Services.AddDbContext<TareasContext>(p => p.UseInMemoryDatabase("TareasDB"/*This is the name asigned to the database in memory*/));
+//And this is the example with a real database:
+builder.Services.AddSqlServer<TareasContext>("Data Source=DESKTOP-3kedRRD\\SQLEXPRESS;Initial Catalog=TareasDb;user id=user;password=Passw0rd");
 builder.Services.AddScoped<ITareaService, TareaService>();
 builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 
